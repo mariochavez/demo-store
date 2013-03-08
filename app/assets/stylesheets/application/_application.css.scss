@@ -40,7 +40,7 @@ hr {
   margin: 1em 0;
 }
 
-input[type='text'], input[type='password'] {
+input[type='text'], input[type='password'], textarea {
   border-radius: 3px;
   border: 1px solid #aaa;
 
@@ -115,7 +115,7 @@ header {
     .field_with_errors {
       display: inline-block;
 
-      input[type='text'], input[type='password'] {
+      input[type='text'], input[type='password'], textarea {
         border: 1px solid $error-color;
         color: $error-color;
 

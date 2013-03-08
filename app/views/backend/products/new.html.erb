@@ -1,0 +1,7 @@
+<div id="content">
+  <%= display_notice %>
+  <h2><%= t('backend.products.new.title') %></h2>
+  <p class="form-help"><%= t('backend.products.new.help') %></p>
+
+  <%= render partial: 'form', locals: { product: @product } %>
+</div>

@@ -1,0 +1,36 @@
+<%= form_for [:backend, product] do |form| %>
+  <%= display_alert %>
+  <%= form.label :name %>
+  <%= form.text_field :name, class: 'medium' %>
+  <%= field_error product, :name %>
+  <br/>
+  <%= form.label :description %>
+  <%= form.text_area :description, cols: 55, rows: 10 %>
+  <%= field_error product, :description %>
+  <br/>
+  <%= form.label :price %>
+  <%= form.text_field :price %>
+  <%= field_error product, :price %>
+  <br/>
+  <%= form.label :inventory %>
+  <%= form.text_field :inventory %>
+  <%= form.label :infinite do %>
+    <%= t('.infinite') %>
+    <%= form.check_box :infinite %>
+  <% end %>
+  <%= field_error product, :inventory %>
+  <br/>
+  <%= form.label :tags %>
+  <%= form.text_field :tags %>
+  <br/>
+  <%= form.label :active %>
+  <%= form.check_box :active %>
+  <br/>
+  <div class='actions'>
+    <%= form.submit t('.actions.create'), class: 'btn large', id: 'create' %>
+  </div>
+<% end %>
+
+<script>
+  productForm = new App.Form.ProductForm
+</script>

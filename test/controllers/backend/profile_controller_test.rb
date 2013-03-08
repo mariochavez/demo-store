@@ -173,9 +173,3 @@ describe Backend::ProfileController do
   end
 end
 
-def stub_current_admin(id = 100)
-  Backend::ProfileController.class_exec(id) do |id|
-    body = -> { @admin ||= Admin.find id }
-    define_method :current_admin, body
-  end
-end

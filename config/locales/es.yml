@@ -32,6 +32,15 @@ es:
       new:
         already_have_profile: 'Usted ya cuenta con perfil'
 
+    products:
+      index:
+        create: 'Agregar producto'
+
+      form:
+        infinite: 'Infinito?'
+        actions:
+          create: 'Agregar producto'
+
   layouts:
     application:
 
@@ -44,31 +53,43 @@ es:
     action:
       alert:
         create: 'Fallo la creacion de %{resource}'
-      notice:
-        create: 'Su %{resource} fue actualizado(a)'
         update: 'Su %{resource} fue actualizado(a)'
+      notice:
+        create: '%{resource} fue creado(a)'
 
     backend:
       profile:
         alert:
           create: 'Su perfil no pudo ser actualizado'
           update: 'Su perfil no pudo ser actualizado'
+        notice:
+          create: 'Su %{resource} fue actualizado(a)'
+          update: 'Su %{resource} fue actualizado(a)'
 
   activerecord:
     models:
       admin: 'Administrador'
       profile: 'Perfil'
+      product: 'Producto'
     attributes:
       admin:
         email: 'Correo electronico'
       profile:
         name: 'Nombre'
+      product:
+        name: 'Nombre'
+        description: 'Descripcion'
+        price: 'Precio'
+        inventory: 'Inventario'
+        tags: 'Etiquetas'
+        active: 'Activo?'
 
     errors:
       messages:
         blank: 'No puede estar en blanco'
         too_short: 'demasiado corto, minimo necesita %{count} caracteres'
         confirmation: 'no coincide con la clave'
+        greater_than_or_equal_to: 'debe ser mayor o igual a %{count}'
 
       models:
         profile:

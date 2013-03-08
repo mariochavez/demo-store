@@ -25,7 +25,7 @@ protected
   end
 
   def current_admin
-    @current_admin ||= Admin.find_by_id session[:admin_id]
+    @current_admin ||= Admin.find_by(id: session[:admin_id])
     @current_admin
   end
 end

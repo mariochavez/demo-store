@@ -103,6 +103,8 @@ GEM
     minitest-capybara (0.1.0)
       capybara (>= 1.0)
       minitest-matchers (>= 1.2)
+    minitest-colorize (0.0.5)
+      minitest (>= 2.0)
     minitest-focus (1.0.0)
       minitest (~> 4.4)
     minitest-matchers (1.2.0)
@@ -201,6 +203,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   meta_request
+  minitest-colorize
   minitest-focus
   minitest-rails
   minitest-rails-capybara
