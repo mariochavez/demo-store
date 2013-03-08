@@ -1,0 +1,14 @@
+<div class="product">
+  <h3><%= link_to product.name, edit_backend_product_path(product) %></h3>
+  <p><%= product.description %></p>
+  <p>
+    <span><%= t('.inventory') %></span>: <%= product.infinite ? t('.infinite') : product.inventory %>
+  </p>
+  <p><span><%= t('.price') %></span>: <%= number_to_currency(product.price) %></p>
+  <p><span><%= t('.active') %></span>: <%= product.active %></p>
+  <p><span><%= t('.tags') %></span>:
+    <% product.tags.split(',').each do |tag| %>
+      <span class='tag'><%= tag %></span>
+    <% end %>
+  </p>
+</div>

@@ -2,6 +2,7 @@ class Backend::ProductsController < ApplicationController
   before_action :authenticate!
 
   def index
+    @products = Product.my_products current_admin
   end
 
   def new

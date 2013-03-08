@@ -15,6 +15,16 @@ describe Backend::ProductsController do
     end
   end
 
+  describe 'index' do
+    it 'render products list' do
+      get :index
+
+      assert_response :success
+      assert_template :index
+      assigns[:products].wont_be_nil
+    end
+  end
+
   describe 'new' do
     it 'renders new product form' do
       get :new

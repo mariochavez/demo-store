@@ -53,7 +53,7 @@ class MiniTest::Unit::TestCase
   def login_admin
     counter = Admin.count + 1
     email = "admin#{counter}@store.com"
-    Admin.create! email: email, password: 'password', password_confirmation: 'password'
+    admin = Admin.create! email: email, password: 'password', password_confirmation: 'password'
 
     visit '/backend/sign_in'
 
@@ -61,6 +61,8 @@ class MiniTest::Unit::TestCase
       fill_in 'admin_email', with: email
       fill_in 'admin_password', with: 'password'
     end
+
     click_button 'login'
+    admin
   end
 end

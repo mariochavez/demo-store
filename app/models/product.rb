@@ -6,6 +6,8 @@ class Product < ActiveRecord::Base
   validates :inventory, numericality: { integer_only: true, greater_than_or_equal_to: -1 }
   validates :active, inclusion: { in: [true, false] }
 
+  scope :my_products, ->(admin) { where(admin_id: admin.id) }
+
   def infinite=(value)
     self.inventory = -1 if value == true
     @infinite == value

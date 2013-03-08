@@ -4,7 +4,7 @@ feature 'product management' do
 
   describe 'without javascript' do
     background do
-      login_admin
+      @admin = login_admin
     end
 
     scenario 'Add new product' do
@@ -40,6 +40,19 @@ feature 'product management' do
       click_button 'Agregar producto'
 
       assert page.has_content? 'Fallo la creacion de Producto'
+    end
+
+    scenario 'Get a list of current logged admin' do
+      Product.create name: 'Product 1', description: 'Some description',
+        price: 1.0, inventory: 1, active: true, admin: @admin
+      other_admin = Admin.create email: 'other@user.com',
+        password: 'password', password_confirmation: 'password'
+      Product.create name: 'Product 1', description: 'Some description',
+        price: 1.0, inventory: 1, active: true, admin: other_admin
+
+      visit '/backend/products'
+
+      all('.product').size.must_equal 1
     end
   end
 
