@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130307224207) do
+ActiveRecord::Schema.define(version: 20130308234920) do
 
   create_table "admins", force: true do |t|
     t.string   "email"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20130307224207) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "images", force: true do |t|
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["product_id"], name: "index_images_on_product_id"
 
   create_table "products", force: true do |t|
     t.string   "name"
