@@ -3,4 +3,15 @@
   margin-left: $gw-gutter;
   margin-top: $padding;
   float: left;
+
+  a {
+    text-decoration: none;
+  }
+
+  .tag {
+    padding: 3px;
+    color: white;
+    background-color: $light-green;
+    font-size: 12px;
+  }
 }

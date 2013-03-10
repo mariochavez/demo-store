@@ -81,7 +81,7 @@ header {
 
 #content {
   background-color: white;
-  padding: $padding / 2;
+  padding: ($padding / 2) 0;
 
   .form-help {
     color: $lighten-gray;
@@ -134,31 +134,32 @@ header {
       //display: block;
     }
   }
+}
 
-  .btn {
-    @include button(simple, $green);
+.btn {
+  @include button(simple, $green);
+  color: white !important;
+}
+
+a {
+  &.btn {
+    text-align: center;
+    color: white;
   }
 
-  a {
-    &.btn {
-      text-align: center;
-    }
-
-    &.large {
-      width: 100%;
-    }
-  }
-
-  .large {
-    font-size: 1.2em;
-    font-weight: normal;
-    width: 25em;
+  &.large {
+    width: 100%;
   }
 }
 
+.large {
+  font-size: 1.2em;
+  font-weight: normal;
+  width: 25em;
+}
 .row {
   overflow: hidden;
-  margin-left: ($gw-gutter * -1) / 2;
+  margin: 0;
 
   .five {
     width: grid-width(5);
