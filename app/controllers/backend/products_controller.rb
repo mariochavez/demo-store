@@ -7,6 +7,7 @@ class Backend::ProductsController < ApplicationController
 
   def new
     @product = Product.new price: 0.0, inventory: 0, active: true, infinite: false
+    (5 - @product.images.count).times { @product.images.build }
   end
 
   def create
@@ -21,6 +22,6 @@ class Backend::ProductsController < ApplicationController
 
 protected
   def product_params
-    params.require(:product).permit(:name, :description, :price, :inventory, :active, :tags, :infinite)
+    params.require(:product).permit(:name, :description, :price, :inventory, :active, :tags, :infinite, images_attributes: [:picture])
   end
 end

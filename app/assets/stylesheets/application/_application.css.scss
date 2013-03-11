@@ -9,14 +9,15 @@
 
 body {
   color: $gray;
-  font-family: $lucida-grande;
+  font-family: $josefin;
   margin: 0;
   @include background-image(image-url('pw_maze_white.png'));
 }
 
 .container {
-  width: grid-width(12);
+  width: 1044px;
   margin: auto;
+  min-height: 100%;
 }
 
 .alert  {
@@ -33,11 +34,17 @@ h1 {
 
 h2 {
   color: $green;
+  font-weight: 600;
+  font-size: 2em;
 }
 
 hr {
   border: 1px solid $lighten-gray;
   margin: 1em 0;
+}
+
+input[type='text'], input[type='password'], textarea, input[type='submit'] {
+  font-family: $josefin;
 }
 
 input[type='text'], input[type='password'], textarea {
@@ -59,6 +66,7 @@ footer{
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 1em;
 }
 
 header {
@@ -85,7 +93,7 @@ header {
 
   .form-help {
     color: $lighten-gray;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   form {
@@ -95,9 +103,10 @@ header {
       width: 6.5em;
       display: inline-block;
       vertical-align: middle;
+      font-weight: 600;
     }
 
-    input[type='text'], input[type='password'] {
+    input[type='text'], input[type='password'], textarea {
       width: 15em;
       font-size: 1em;
       padding: $padding / 4;
@@ -169,6 +178,12 @@ a {
 
   .six {
     width: grid-width(6);
+    margin-left: $gw-gutter;
+    float: left;
+  }
+
+  .twelve {
+    width: grid-width(12);
     margin-left: $gw-gutter;
     float: left;
   }

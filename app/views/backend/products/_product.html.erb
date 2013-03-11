@@ -1,14 +1,16 @@
 <div class="product">
-  <h3><%= link_to product.name, edit_backend_product_path(product) %></h3>
+  <%= picture_tag(product) do %>
+    <span class='title'>
+      <h3><%= link_to product.name, edit_backend_product_path(product) %></h3>
+    </span>
+    <span class="price"><%= number_to_currency(product.price) %></span>
+  <% end %>
+  <%= tags_tag(product) %>
   <p><%= product.description %></p>
-  <p>
-    <span><%= t('.inventory') %></span>: <%= product.infinite ? t('.infinite') : product.inventory %>
+  <p class="info inventory">
+    <%= inventory_tag(product) %>
   </p>
-  <p><span><%= t('.price') %></span>: <%= number_to_currency(product.price) %></p>
-  <p><span><%= t('.active') %></span>: <%= product.active %></p>
-  <p><span><%= t('.tags') %></span>:
-    <% product.tags.split(',').each do |tag| %>
-      <span class='tag'><%= tag %></span>
-    <% end %>
+  <p class="info status">
+    <%= status_tag(product) %>
   </p>
 </div>

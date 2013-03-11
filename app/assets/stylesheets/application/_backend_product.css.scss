@@ -1,17 +1,97 @@
 .product {
+  @include box-shadow(0 1px 3px rgba(34,25,25,0.2));
+  border-radius: 3px;
   width: grid-width(4);
   margin-left: $gw-gutter;
   margin-top: $padding;
   float: left;
+  overflow: hidden;
+  position: relative;
+  background-color: $light-gray;
+
+  .no-image {
+    position: relative;
+    height: 250px;
+    background-color: $gray;
+
+    .icon-camera {
+      font-size: 5em;
+      color: white;
+      top: 1.1em;
+      position: absolute;
+      left: 1.5em;
+    }
+  }
+
+  .image {
+    position: relative;
+  }
+
+  p {
+    padding: 0 ($padding / 4);
+    color: $light-black;
+    font-size: 1.1em;
+    text-align: justify;
+  }
 
   a {
     text-decoration: none;
+    color: white;
+  }
+
+  img {
+    width: grid-width(4);
+    position: relative;
+  }
+
+  .info {
+    margin-top: 0;
+    width: grid-width(1.85);
+    display: inline-block;
+
+    .green {
+      color: $green;
+    }
+
+    .red {
+      color: $error-color;
+    }
+
+    &.status {
+      text-align: right;
+    }
+  }
+
+  .price {
+    position: absolute;
+    bottom: ($padding / 2);
+    right: ($padding / 2);
+    padding: ($padding / 8);
+    background-color: white;
+    border-radius: 3px;
+    text-align: left;
+    color: $green;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+
+  .title {
+    position: absolute;
+    padding: 0 ($padding / 4);
+    top: 0px;
+    background-color: rgba(20,20,20,0.7);
+    width: grid-width(4);
+
+    h3 {
+      margin: ($padding/4);
+    }
   }
 
   .tag {
     padding: 3px;
     color: white;
     background-color: $light-green;
-    font-size: 12px;
+    font-size: 0.9em;
+    margin-right: 5px;
   }
 }

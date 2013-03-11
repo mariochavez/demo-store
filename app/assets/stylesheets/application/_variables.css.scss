@@ -1,9 +1,12 @@
-$gw-column: 67px;          // Column Width
+$gw-column: 65.3px;          // Column Width
 $gw-gutter: 20px;           // Gutter Width
+
+$light-black: #555;
 
 $gray: #8c8c8c; //#10222B;
 $darker-gray: #4c4c4c;
 $lighten-gray: #ccc;
+$light-gray: #f8f8f8;
 
 $green: #95AB63;
 $light-green: #BDD684;
@@ -20,3 +23,18 @@ $notice-foreground: $notice-color;
 
 @include font-face(Merienda, 'merienda-regular', $asset-pipeline: true);
 @include font-face(Merienda, 'merienda-bold', bold, $asset-pipeline: true);
+
+@include font-face(JosefinSans, 'JosefinSans-Bold', $weight: 700,  $asset-pipeline: true);
+@include font-face(JosefinSans, 'JosefinSans-BoldItalic', $weight: 700, $style: italic, $asset-pipeline: true);
+@include font-face(JosefinSans, 'JosefinSans-Italic', $weight: 400, $style: italic, $asset-pipeline: true);
+@include font-face(JosefinSans, 'JosefinSans-Light', $weight: 300, $asset-pipeline: true);
+@include font-face(JosefinSans, 'JosefinSans-LightItalic', $weight: 300, $style: italic, $asset-pipeline: true);
+@include font-face(JosefinSans, 'JosefinSans-Regular', $asset-pipeline: true);
+@include font-face(JosefinSans, 'JosefinSans-SemiBold', $weight: 600, $asset-pipeline: true);
+@include font-face(JosefinSans, 'JosefinSans-SemiBoldItalic', $weight: 600, $style: italic, $asset-pipeline: true);
+@include font-face(JosefinSans, 'JosefinSans-Thin', $weight: 100, $asset-pipeline: true);
+@include font-face(JosefinSans, 'JosefinSans-ThinItalic', $weight: 100, $style: italic, $asset-pipeline: true);
+
+@include font-face(FontAwesome, 'fontawesome-webfont', $asset-pipeline: true);
+
+$josefin: JosefinSans, sans-serif;

@@ -7,7 +7,7 @@ class ProductForm
         ($ '#product_inventory').val '-1'
         ($ '#product_inventory').prop 'readonly', 'true'
       else
-        ($ '#product_inventory').prop 'readonly', 'false'
+        ($ '#product_inventory').removeAttr 'readonly'
     )
 
 App.Form.ProductForm = ProductForm

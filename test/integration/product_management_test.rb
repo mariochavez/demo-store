@@ -54,6 +54,27 @@ feature 'product management' do
 
       all('.product').size.must_equal 1
     end
+
+    scenario 'Add product with an image' do
+      file = Rails.root.join('test', 'fixtures', 'images', 'rails.png')
+
+      visit '/backend/products'
+
+      click_link 'Agregar producto'
+
+      within('#new_product') do
+        fill_in 'product_name', with: 'Product 1'
+        fill_in 'product_description', with: 'Product description'
+        fill_in 'product_price', with: '1.0'
+        fill_in 'product_inventory', with: '1'
+        fill_in 'product_tags', with: 'electronics, home'
+        attach_file 'product_images_attributes_0_picture', file
+      end
+
+      click_button 'Agregar producto'
+
+      all('.product .image').size.must_equal 1
+    end
   end
 
   describe 'with javascript' do

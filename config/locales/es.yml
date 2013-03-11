@@ -1,6 +1,8 @@
 es:
 
   app_name: 'HueHue'
+  back: 'Regresar'
+  or: 'o'
 
   actions:
     update: 'Actualizar'
@@ -33,13 +35,23 @@ es:
         already_have_profile: 'Usted ya cuenta con perfil'
 
     products:
+
       index:
         create: 'Agregar producto'
+
+      new:
+        title: 'Agregar un nuevo producto'
+        help: 'Por favor complete la siguiente forma para agregar un nuevo producto.'
 
       form:
         infinite: 'Infinito?'
         actions:
           create: 'Agregar producto'
+        picture: 'Imagen %{index}'
+        images_help: 'Agregue hasta 5 images para su producto. Las imagenes tienes que estar en formato jpg o png y no deben de medir mas de 1 megabyte de tanano. Las imagenes en formato cuadrado son preferibles.'
+
+      product:
+        state: 'Estado'
 
   layouts:
     application:
@@ -116,7 +128,7 @@ es:
     currency:
       format:
         delimiter: ','
-        format: ! '%u %n'
+        format: ! '%u %n MNX'
         precision: 2
         separator: ! '.'
         significant: false
