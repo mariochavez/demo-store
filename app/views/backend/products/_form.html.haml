@@ -1,0 +1,41 @@
+= form_for [:backend, product], html: { multipart: true } do |form|
+  = display_alert
+  = form.label :name
+  = form.text_field :name, class: 'medium'
+  = field_error product, :name
+  %br/
+  = form.label :description
+  = form.text_area :description, cols: 55, rows: 10, class: 'medium'
+  = field_error product, :description
+  %br/
+  = form.label :price
+  = form.text_field :price
+  = field_error product, :price
+  %br/
+  = form.label :inventory
+  = form.text_field :inventory
+  = form.label :infinite do
+    = t('.infinite')
+    = form.check_box :infinite
+  = field_error product, :inventory
+  %br/
+  = form.label :tags
+  = form.text_field :tags
+  %br/
+  = form.label :active
+  = form.check_box :active
+  %br/
+  %hr/
+  %p.form-help= t('.images_help')
+  - index = 1
+  = form.fields_for :images do |images|
+    = images.label t('.picture', index: index)
+    = images.file_field :picture
+    %br/
+    - index += 1
+  .actions
+    = form.submit t('.actions.create'), class: 'btn large', id: 'create'
+    = t('or')
+    = link_to t('back'), backend_products_path
+:javascript
+  productForm = new App.Form.ProductForm

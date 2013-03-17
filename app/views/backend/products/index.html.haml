@@ -1,0 +1,7 @@
+= display_notice
+.nine
+  %h2= t('.title')
+.three.new
+  = link_to t('.create'), new_backend_product_path, class: 'btn'
+
+= render @products

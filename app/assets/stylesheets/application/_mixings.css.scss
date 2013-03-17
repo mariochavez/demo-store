@@ -22,6 +22,7 @@
 @mixin cell($width, $valign: top) {
   width: grid-width($width);
   margin-left: $gw-gutter;
-  display: inline-block;
+  //display: inline-block;
+  float: left;
   vertical-align: $valign;
 }

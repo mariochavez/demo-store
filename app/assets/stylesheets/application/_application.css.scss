@@ -191,12 +191,20 @@ a {
   width: 25em;
 }
 
+.three {
+  @include cell(3);
+}
+
 .five {
   @include cell(5);
 }
 
 .six {
   @include cell(6);
+}
+
+.nine {
+  @include cell(9);
 }
 
 .twelve {

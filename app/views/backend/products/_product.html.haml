@@ -1,0 +1,11 @@
+.product
+  = picture_tag(product) do
+    %span.title
+    %h3= link_to product.name, edit_backend_product_path(product)
+    %span.price= number_to_currency(product.price)
+  = tags_tag(product)
+  %p= product.description
+  %p.info.inventory
+    = inventory_tag(product)
+  %p.info.status
+    = status_tag(product)

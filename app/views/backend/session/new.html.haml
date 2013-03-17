@@ -1,0 +1,11 @@
+.login-logo
+  %h1= t(:app_name)
+.login-area
+  %h2= t('.new_session')
+  = form_for @admin, url: backend_session_create_path do |form|
+    = display_alert
+    = form.text_field :email, placeholder: t('.email')
+    %br/
+    = form.password_field :password, placeholder: t('.password')
+    %br/
+    = form.submit t('.login'), id: 'login', class: 'btn btn-large'

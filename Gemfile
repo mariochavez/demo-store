@@ -35,6 +35,7 @@ end
 
 gem 'puma'
 gem 'pretty_formatter'
+gem 'haml'
 
 gem 'jquery-rails'
 
@@ -58,3 +59,5 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use debugger
 # gem 'debugger'
+
+

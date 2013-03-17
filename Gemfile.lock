@@ -80,6 +80,8 @@ GEM
     ffi (1.4.0)
     foreman (0.61.0)
       thor (>= 0.13.6)
+    haml (4.0.0)
+      tilt
     hike (1.2.1)
     i18n (0.6.2)
     jbuilder (1.0.2)
@@ -201,6 +203,7 @@ DEPENDENCIES
   bourbon
   coffee-rails (~> 4.0.0.beta1)
   foreman
+  haml
   jbuilder (~> 1.0.1)
   jquery-rails
   launchy

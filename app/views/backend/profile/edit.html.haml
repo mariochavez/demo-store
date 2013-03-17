@@ -1,0 +1,4 @@
+.twelve
+  %h2= t('backend.profile.title')
+  %p.form-help= t('backend.profile.help')
+  = render partial: 'form', locals: { profile: @profile }

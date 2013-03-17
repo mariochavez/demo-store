@@ -1,0 +1,13 @@
+.twelve
+  = display_notice
+  %h2= t('.title')
+.five.avatar-medium
+  = image_tag @profile.avatar.url(:medium)
+.six.show
+  .field
+    %span.label= t('.name')
+    %span.input= @profile.try(:name )
+  .field
+    %span.label= t('.email')
+    %span.input= current_admin.email
+  = link_to t('actions.change'), edit_backend_profile_path, class: 'btn large', id: 'update'

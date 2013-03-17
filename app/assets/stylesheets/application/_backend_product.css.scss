@@ -1,10 +1,23 @@
+.products {
+  .new {
+    height: 95px;
+    position: relative;
+
+    .btn {
+      font-size: 1em;
+      font-weight: 100;
+      position: absolute;
+      right: 0;
+      bottom: 40%;
+    }
+  }
+}
+
 .product {
   @include box-shadow(0 1px 3px rgba(34,25,25,0.2));
   border-radius: 3px;
-  width: grid-width(4);
-  margin-left: $gw-gutter;
-  margin-top: $padding;
-  float: left;
+  @include cell(4);
+  margin-bottom: $padding;
   overflow: hidden;
   position: relative;
   background-color: $light-gray;
@@ -17,9 +30,9 @@
     .icon-camera {
       font-size: 5em;
       color: white;
-      top: 1.1em;
+      top: 35%;
       position: absolute;
-      left: 1.5em;
+      left: 35%;
     }
   }
 
@@ -46,7 +59,7 @@
 
   .info {
     margin-top: 0;
-    width: grid-width(1.85);
+    width: grid-width(2.08);
     display: inline-block;
 
     .green {
