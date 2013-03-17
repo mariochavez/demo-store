@@ -34,6 +34,7 @@ group :test do
 end
 
 gem 'puma'
+gem 'pretty_formatter'
 
 gem 'jquery-rails'
 

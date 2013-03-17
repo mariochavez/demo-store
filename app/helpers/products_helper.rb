@@ -48,7 +48,7 @@ protected
   def build_tags(tags)
     html_tags = ''
 
-    (tags || []).split(',').each do |tag|
+    (tags || '').split(',').each do |tag|
       html_tags += content_tag :span, tag, class: 'tag'
     end
 

@@ -10,7 +10,9 @@
   <%= render partial: 'shared/header' unless controller.controller_name == 'session' %>
 
   <div class="container">
-    <%= yield %>
+    <div class="content <%= controller.controller_name %>">
+      <%= yield %>
+    </div>
   </div>
 
   <footer>

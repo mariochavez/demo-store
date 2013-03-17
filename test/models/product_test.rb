@@ -19,7 +19,7 @@ describe Product do
     it 'must be invalid with out attributes' do
       product.valid?.must_equal false
 
-      product.errors.size.must_equal 9
+      product.errors.size.must_equal 8
       product.errors[:name].wont_be_nil
       product.errors[:price].wont_be_nil
       product.errors[:inventory].wont_be_nil
@@ -34,7 +34,7 @@ describe Product do
       product = Product.new params
 
       product.valid?.must_equal false
-      product.errors.size.must_equal 3
+      product.errors.size.must_equal 2
       product.errors[:price].wont_be_nil
       product.errors[:inventory].wont_be_nil
       product.errors[:active].wont_be_nil
