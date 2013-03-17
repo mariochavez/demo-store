@@ -15,8 +15,6 @@ es:
     session:
       new:
         new_session: 'Iniciar sesion'
-        email: 'Correo electronico'
-        password: 'Clave'
         login: 'Iniciar sesion'
 
     profile:
@@ -38,6 +36,7 @@ es:
 
       index:
         create: 'Agregar producto'
+        title: 'Productos'
 
       new:
         title: 'Agregar un nuevo producto'

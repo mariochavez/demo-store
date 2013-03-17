@@ -11,6 +11,14 @@
       bottom: 40%;
     }
   }
+
+  .actions {
+    .btn {
+      &.large {
+        width: 18.3em;
+      }
+    }
+  }
 }
 
 .product {
@@ -92,6 +100,7 @@
     position: absolute;
     padding: 0 ($padding / 4);
     top: 0px;
+    left: 0px;
     background-color: rgba(20,20,20,0.7);
     width: grid-width(4);
 
@@ -102,6 +111,7 @@
 
   .tag {
     padding: 3px;
+    border-radius: 2px;
     color: white;
     background-color: $light-green;
     font-size: 0.9em;

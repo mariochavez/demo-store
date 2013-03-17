@@ -1,0 +1,30 @@
+es:
+  simple_form:
+    'yes': 'Si'
+    'no': 'No'
+
+    required:
+      text: 'requerido'
+      mark: '*'
+
+    error_notification:
+      default_message: 'Ha habido problemas con la forma'
+
+    labels:
+      defaults:
+        avatar: 'Foto'
+        password: 'Clave'
+        password_confirmation: "Confirmar clave"
+
+    placeholders:
+      defaults:
+        name: 'Nombre'
+        email: 'Correo electronico'
+        password: 'Clave'
+        password_confirmation: "Clave"
+
+    helpers:
+      submit:
+        profile:
+          create: 'Actualizar perfil'
+          update: 'Actualizar perfil'

@@ -1,7 +1,7 @@
 .product
   = picture_tag(product) do
     %span.title
-    %h3= link_to product.name, edit_backend_product_path(product)
+      %h3= link_to product.name, edit_backend_product_path(product)
     %span.price= number_to_currency(product.price)
   = tags_tag(product)
   %p= product.description

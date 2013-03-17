@@ -167,6 +167,9 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    simple_form (3.0.0.beta1)
+      actionpack (>= 4.0.0.beta, < 4.1)
+      activemodel (>= 4.0.0.beta, < 4.1)
     slop (3.4.3)
     sprockets (2.9.0)
       hike (~> 1.2)
@@ -219,6 +222,7 @@ DEPENDENCIES
   puma
   rails (= 4.0.0.beta1)
   sass-rails (~> 4.0.0.beta1)
+  simple_form (~> 3.0.0.beta1)
   turbolinks
   uglifier (>= 1.0.3)
   validate_as_email!

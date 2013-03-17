@@ -20,7 +20,7 @@ module ApplicationHelper
   end
 
   def display_notice
-    content_tag :div, class: 'twelve notice' do
+    content_tag :div, class: 'notice' do
       flash[:notice]
     end if flash[:notice]
   end
