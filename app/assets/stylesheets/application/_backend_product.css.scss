@@ -19,6 +19,11 @@
       }
     }
   }
+
+  .pictures {
+    margin-left: 0;
+    margin-bottom: $padding/2;
+  }
 }
 
 .product {
@@ -116,5 +121,11 @@
     background-color: $light-green;
     font-size: 0.9em;
     margin-right: 5px;
+  }
+}
+
+.product_inventory {
+  label {
+    width: 6.25em !important;
   }
 }

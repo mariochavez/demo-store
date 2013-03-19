@@ -7,7 +7,7 @@ describe Backend::ProductsController do
 
   describe 'not logged user' do
     it 'redirects to login' do
-      destroy_session!
+      warden.logout(:admin)
 
       get :index
 
@@ -55,6 +55,43 @@ describe Backend::ProductsController do
       assert_response :success
       assert_template :new
       flash.now[:alert].wont_be_nil
+    end
+  end
+
+  describe 'edit' do
+    it 'render edit product form' do
+      get :edit, id: 100
+
+      assert_response :success
+      assert_template :edit
+      assigns[:product].wont_be_nil
+    end
+
+    it 'redirect to products when product not found' do
+      get :edit, id: 300
+
+      assert_redirected_to backend_products_path
+      flash[:alert].wont_be_nil
+    end
+
+    it 'redirect to products when product does not belong to admin' do
+      get :edit, id: 200
+
+      assert_redirected_to backend_products_path
+      flash[:alert].wont_be_nil
+    end
+  end
+
+  describe 'update' do
+    let(:product) {
+      { description: 'Updated description', price: 99.99 }
+    }
+
+    it 'updates a product and redirect to products' do
+      put :update, id: 100, product: product
+
+      assert_redirected_to backend_products_path
+      flash[:notice].wont_be_nil
     end
   end
 end

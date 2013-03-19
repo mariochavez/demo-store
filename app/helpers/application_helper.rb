@@ -15,8 +15,8 @@ module ApplicationHelper
 
   def display_alert
     content_tag :div, class: 'alert' do
-      flash[:alert]
-    end if flash[:alert]
+      flash[:alert] || warden.message
+    end if flash[:alert] || warden.message.present?
   end
 
   def display_notice

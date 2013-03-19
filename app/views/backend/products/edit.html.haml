@@ -1,0 +1,6 @@
+#content
+  .twelve
+    = display_notice
+    %h2= t('backend.products.edit.title')
+    %p.form-help= t('backend.products.edit.help')
+    = render partial: 'form', locals: { product: @product, action: 'edit' }

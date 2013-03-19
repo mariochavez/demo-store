@@ -29,6 +29,23 @@ module ProductsHelper
     end
   end
 
+  def pictures_tag(product)
+    actual_images = product.images.select{ |image| not image.new_record? }
+
+    image_content = ''
+    unless actual_images.empty?
+      content_tag :div, class: 'twelve pictures' do
+        actual_images.each do |image|
+          image_content += content_tag :div, class: 'two' do
+            image_tag image.picture.url(:thumb)
+          end
+        end
+
+        image_content.html_safe
+      end
+    end
+  end
+
 protected
   def state_info(product)
     icon = 'icon-ok-sign green'

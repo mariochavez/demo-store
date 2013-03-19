@@ -42,10 +42,15 @@ es:
         title: 'Agregar un nuevo producto'
         help: 'Por favor complete la siguiente forma para agregar un nuevo producto.'
 
+      edit:
+        title: 'Modificar producto'
+        help: 'Modifique la informacion del producto.'
+
       form:
         infinite: 'Infinito?'
         actions:
           create: 'Agregar producto'
+          edit: 'Actualizar producto'
         picture: 'Imagen %{index}'
         images_help: 'Agregue hasta 5 images para su producto. Las imagenes tienes que estar en formato jpg o png y no deben de medir mas de 1 megabyte de tanano. Las imagenes en formato cuadrado son preferibles.'
 

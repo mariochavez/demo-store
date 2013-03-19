@@ -6,30 +6,33 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/colorize"
 
-# Add `gem "minitest-rails-capybara"` to the test group of your Gemfile
-# and uncomment the following if you want Capybara feature tests
-# require "minitest/rails/capybara"
-
-# Uncomment if you want awesome colorful output
-# require "minitest/pride"
-
 class ActiveSupport::TestCase
+  include Warden::Test::Helpers
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
 
-  def stub_current_admin(id = 100)
-    ApplicationController.class_exec(id) do |id|
-      body = -> { @current_admin ||= Admin.find id }
-      define_method :current_admin, body
-    end
+  def setup
+    Warden.test_reset!
+    setup_warden
   end
 
-  def destroy_session!
-    ApplicationController.class_eval do
-      define_method :admin_logged?, -> { false }
+  def request
+    @request ||= ActionController::TestRequest.new
+  end
+
+  def setup_warden
+    @warden ||= begin
+      manager = Warden::Manager.new(nil, &Rails.application.config.middleware.detect{|m| m.name == 'Warden::Manager'}.block)
+      request.env['warden'] = Warden::Proxy.new(@request.env, manager)
     end
+  end
+  alias_method :warden, :setup_warden
+
+  def stub_current_admin(id = 100)
+    admin = Admin.find id
+    warden.set_user(admin, scope: :admin)
   end
 end
 
@@ -37,8 +40,10 @@ class MiniTest::Unit::TestCase
   include Rails.application.routes.url_helpers
   include Capybara::RSpecMatchers
   include Capybara::DSL
+  include Warden::Test::Helpers
 
   def setup
+    Warden.test_reset!
     Capybara.reset_sessions!
   end
 

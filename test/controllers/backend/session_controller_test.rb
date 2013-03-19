@@ -1,10 +1,6 @@
 require "minitest_helper"
 
 describe Backend::SessionController do
-  before do
-    destroy_session!
-  end
-
   describe 'new' do
     it 'success' do
 
@@ -21,7 +17,6 @@ describe Backend::SessionController do
       delete :destroy
 
       assert_redirected_to backend_sign_in_path
-      session[:admin_id].must_be_nil
     end
   end
 
@@ -34,18 +29,13 @@ describe Backend::SessionController do
       post :create, admin: params
 
       assert_redirected_to backend_root_path
-      session[:admin_id].wont_be_nil
       flash.now[:alert].must_be_nil
     end
 
     it 'fail with invalid credentials' do
-      post :create, admin: { email: '', password: '' }
-
-      assert_response :success
-      assert_template :new
-      assigns[:admin].wont_be_nil
-      session[:admin_id].must_be_nil
-      flash.now[:alert].wont_be_nil
+      lambda {
+        post :create, admin: { email: '', password: '' }
+      }.must_raise(ArgumentError)
     end
   end
 end

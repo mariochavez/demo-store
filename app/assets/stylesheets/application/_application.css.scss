@@ -55,11 +55,17 @@ hr {
   margin: 1em 0;
 }
 
-input[type='text'], input[type='password'], textarea, input[type='submit'] {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='text'], input[type='password'], input[type='number'], textarea, input[type='submit'] {
   font-family: $josefin;
 }
 
-input[type='text'], input[type='password'], textarea {
+input[type='text'], input[type='password'], input[type='number'], textarea {
   border-radius: 3px;
   border: 1px solid #aaa;
 
@@ -130,7 +136,7 @@ header {
       font-weight: 600;
     }
 
-    input[type='text'], input[type='password'], textarea {
+    input[type='text'], input[type='password'], input[type='number'], textarea {
       width: 15em;
       font-size: 1em;
       padding: $padding / 4;
@@ -148,7 +154,7 @@ header {
     .field_with_errors {
       display: inline-block;
 
-      input[type='text'], input[type='password'], textarea {
+      input[type='text'], input[type='password'], input[type='number'], textarea {
         border: 1px solid $error-color;
         color: $error-color;
 
@@ -188,6 +194,10 @@ a {
   font-size: 1.2em;
   font-weight: normal;
   width: 25em;
+}
+
+.two {
+  @include cell(2);
 }
 
 .three {

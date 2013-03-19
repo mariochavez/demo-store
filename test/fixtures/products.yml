@@ -2,19 +2,21 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  description: MyText
+  id: 100
+  name: 'Product 1'
+  description: 'Some description'
   price: 9.99
   inventory: 1
-  active: false
-  tags: MyString
-  admin: 
+  active: true
+  tags: 'product'
+  admin_id: 100
 
 two:
-  name: MyString
-  description: MyText
+  id: 200
+  name: 'Product 2'
+  description: 'Some description'
   price: 9.99
   inventory: 1
-  active: false
-  tags: MyString
-  admin: 
+  active: true
+  tags: 'product'
+  admin_id: 200

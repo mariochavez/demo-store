@@ -37,6 +37,7 @@ gem 'puma'
 gem 'pretty_formatter'
 gem 'haml'
 gem 'simple_form', '~> 3.0.0.beta1'
+gem 'warden'
 
 gem 'jquery-rails'
 

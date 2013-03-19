@@ -75,6 +75,24 @@ feature 'product management' do
 
       all('.product .image').size.must_equal 1
     end
+
+    scenario 'Edit product info' do
+      Product.create name: 'Product 1', description: 'Some description',
+        price: 1.0, inventory: 1, active: true, admin: @admin
+
+      visit '/backend/products'
+
+      click_link 'Product 1'
+
+      within('#edit_product') do
+        fill_in 'product_name', with: 'Product 2'
+      end
+
+      click_button 'Actualizar producto'
+
+      assert page.has_content? 'Producto actualizado'
+      all('.product').size.must_equal 1
+    end
   end
 
   describe 'with javascript' do

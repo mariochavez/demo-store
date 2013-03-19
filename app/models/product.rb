@@ -9,7 +9,13 @@ class Product < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  scope :my_products, ->(admin) { where(admin_id: admin.id) }
+  scope :find_products, ->(admin) { where(admin_id: admin.id) }
+
+  class << self
+    def find_product(id, admin)
+      where(id: id, admin_id: admin.id).first
+    end
+  end
 
   def infinite=(value)
     self.inventory = -1 if value == true
