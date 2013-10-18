@@ -2,15 +2,15 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '4.0.0.beta1'
+gem 'rails', '4.0.0'
 
 gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
+  gem 'sass-rails',   '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
   gem 'bourbon'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
@@ -43,7 +43,7 @@ gem 'jquery-rails'
 
 gem 'validate_as_email', git: 'git@github.com:mariochavez/validate_as_email.git'
 
-gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git', branch: 'rails-4'
+gem 'paperclip', github: 'thoughtbot/paperclip', branch: 'rails-4'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
